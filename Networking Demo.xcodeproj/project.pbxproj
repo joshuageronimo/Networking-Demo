@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		211F8CF6616FDEE21436235D /* Pods_Networking_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98FE665B3A16DF6B34D43DE /* Pods_Networking_Demo.framework */; };
+		DFA4FBF9200EE117005FFF1B /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA4FBF8200EE117005FFF1B /* Link.swift */; };
+		DFB84008200EBCC0001F775A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB84007200EBCC0001F775A /* Constant.swift */; };
 		DFC4D4CA200D8A4B00D38240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4D4C9200D8A4B00D38240 /* AppDelegate.swift */; };
 		DFC4D4CC200D8A4B00D38240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4D4CB200D8A4B00D38240 /* ViewController.swift */; };
 		DFC4D4CF200D8A4B00D38240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC4D4CD200D8A4B00D38240 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 		17F2581D8B3FE607BB6288FC /* Pods-Networking Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Networking Demo/Pods-Networking Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		98516D23C39DC2EBD51CAF51 /* Pods-Networking Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Networking Demo/Pods-Networking Demo.release.xcconfig"; sourceTree = "<group>"; };
 		B98FE665B3A16DF6B34D43DE /* Pods_Networking_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Networking_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFA4FBF8200EE117005FFF1B /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		DFB84007200EBCC0001F775A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DFC4D4C6200D8A4B00D38240 /* Networking Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Networking Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC4D4C9200D8A4B00D38240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC4D4CB200D8A4B00D38240 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DFA4FBF5200EE092005FFF1B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DFB84007200EBCC0001F775A /* Constant.swift */,
+				DFA4FBF8200EE117005FFF1B /* Link.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		DFC4D4BD200D8A4B00D38240 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +83,7 @@
 		DFC4D4C8200D8A4B00D38240 /* Networking Demo */ = {
 			isa = PBXGroup;
 			children = (
+				DFA4FBF5200EE092005FFF1B /* Network */,
 				DFC4D4C9200D8A4B00D38240 /* AppDelegate.swift */,
 				DFC4D4CB200D8A4B00D38240 /* ViewController.swift */,
 				DFC4D4CD200D8A4B00D38240 /* Main.storyboard */,
@@ -221,6 +235,8 @@
 			files = (
 				DFC4D4CC200D8A4B00D38240 /* ViewController.swift in Sources */,
 				DFC4D4CA200D8A4B00D38240 /* AppDelegate.swift in Sources */,
+				DFB84008200EBCC0001F775A /* Constant.swift in Sources */,
+				DFA4FBF9200EE117005FFF1B /* Link.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
