@@ -27,8 +27,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // UI
+        
+        
         view.addSubview(imageContainer)
         imageContainer.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         imageContainer.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
