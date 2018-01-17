@@ -28,7 +28,6 @@ struct Constant {
     }
     
     // MARK: Flickr Parameter Values
-    
     struct FlickrParameterValues {
         static let GalleryMethod = "flickr.galleries.getPhotos"
         static let APIKey = "e85fd10a7773c7a46f57ccc43817ae66"
