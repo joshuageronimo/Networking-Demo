@@ -8,5 +8,6 @@ target 'Networking Demo' do
   # Pods for Networking Demo
 pod 'SwiftyJSON'
 pod 'Alamofire', '~> 4.5'
+pod 'AlamofireImage', '~> 3.3'
 
 end

@@ -62,6 +62,28 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		DFA4FBFA200EE2A6005FFF1B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFA4FBFB200EE2AD005FFF1B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DFC4D4CB200D8A4B00D38240 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DFA4FBFC200EE2B3005FFF1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		DFC4D4BD200D8A4B00D38240 = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				DFA4FBF5200EE092005FFF1B /* Network */,
+				DFA4FBFA200EE2A6005FFF1B /* Model */,
+				DFA4FBFC200EE2B3005FFF1B /* View */,
+				DFA4FBFB200EE2AD005FFF1B /* Controller */,
 				DFC4D4C9200D8A4B00D38240 /* AppDelegate.swift */,
-				DFC4D4CB200D8A4B00D38240 /* ViewController.swift */,
 				DFC4D4CD200D8A4B00D38240 /* Main.storyboard */,
 				DFC4D4D0200D8A4B00D38240 /* Assets.xcassets */,
 				DFC4D4D2200D8A4B00D38240 /* LaunchScreen.storyboard */,
@@ -196,11 +220,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Networking Demo/Pods-Networking Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

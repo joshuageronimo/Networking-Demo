@@ -16,7 +16,7 @@ class Link {
         Constant.FlickrParameterKeys.Method : Constant.FlickrParameterValues.GalleryMethod,
         Constant.FlickrParameterKeys.APIKey : Constant.FlickrParameterValues.APIKey,
         Constant.FlickrParameterKeys.GalleryID : Constant.FlickrParameterValues.GalleryID,
-        Constant.FlickrParameterKeys.Extras : Constant.FlickrParameterValues.OriginalURL,
+        Constant.FlickrParameterKeys.Extras : Constant.FlickrParameterValues.Extra,
         Constant.FlickrParameterKeys.Format : Constant.FlickrParameterValues.ResponseFormat,
         Constant.FlickrParameterKeys.NoJSONCallback : Constant.FlickrParameterValues.DisableJSONCallback]
     
@@ -30,6 +30,9 @@ class Link {
         
         for (key, value) in methodParameterKeys {
             let queryItem = URLQueryItem(name: key, value: "\(value)")
+//            if value.contains("url_o") {
+//                components.QUERY
+//            }
             components.queryItems?.append(queryItem)
             
         }
