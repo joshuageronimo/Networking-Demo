@@ -33,14 +33,14 @@ struct Constant {
         static let APIKey = "e85fd10a7773c7a46f57ccc43817ae66"
         static let GalleryID = "72157692049980335"
         // Full extra value link
-        static let Extra = "\(ExtraValue.OriginalSize),+\(ExtraValue.Views),+\(ExtraValue.DateTaken),+\(ExtraValue.PathAlias)"
+        static let Extra = "\(ExtraValue.MediumSizeImage),+\(ExtraValue.Views),+\(ExtraValue.DateTaken),+\(ExtraValue.PathAlias)"
         static let ResponseFormat = "json"
         static let DisableJSONCallback = "1" /* 1 means "yes" */
     }
     
     // all the values for extra
     struct ExtraValue {
-        static let OriginalSize = "url_o"
+        static let MediumSizeImage = "url_m"
         static let Views = "views"
         static let DateTaken = "date_taken"
         static let PathAlias = "path_alias"
