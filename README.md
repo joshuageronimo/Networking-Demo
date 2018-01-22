@@ -1,7 +1,5 @@
 # Networking-Demo
 
-!! Still in development !!
-
 Networking in iOS using Alamofire &amp; SwiftyJSON Framework
 
 ## Features
