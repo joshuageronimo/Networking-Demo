@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
-class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    // API - URL
+    private let url = Network.instance.flickrURLFromParameters()
+    
     @IBOutlet weak var menuCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -25,14 +30,19 @@ class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UIC
         // Dispose of any resources that can be recreated.
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let gallery = DataSource.instance.getArray[indexPath.item]
+        performSegue(withIdentifier: "PhotoGallery", sender: gallery)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return DataSource.instance.getArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as? MenuGalleryCollectionViewCell {
-            
-          return cell
+            cell.updateCell(gallery: DataSource.instance.getArray[indexPath.item])
+            return cell
         } else {
             return MenuGalleryCollectionViewCell()
         }

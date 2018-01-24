@@ -16,15 +16,12 @@ private let reuseIdentifier = "Cell"
 class GalleryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // API - URL
-    private let url = Link.instance.flickrURLFromParameters()
+    private let url = Network.instance.flickrURLFromParameters()
     
     private var allPhotosInGallery: [Photo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)

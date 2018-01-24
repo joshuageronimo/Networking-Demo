@@ -14,5 +14,10 @@ class MenuGalleryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var galleryNumber: UILabel!
     @IBOutlet weak var photoCount: UILabel!
     
+    func updateCell(gallery: Gallery) {
+        self.galleryNumber.text?.append(gallery.galleryNumber)
+        self.photoCount.text = "\(gallery.numberOfPhotos) Photos"
+    }
+    
     
 }

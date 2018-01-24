@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Link {
+class Network {
     
-    static let instance = Link()
+    static let instance = Network()
     
     private let methodParameterKeys = [
         Constant.FlickrParameterKeys.Method : Constant.FlickrParameterValues.GalleryMethod,
