@@ -10,6 +10,16 @@ import UIKit
 
 class PageCollectionViewCell: UICollectionViewCell {
     
+    // Font Sizes
+    let titleSize: CGFloat = 50
+    let descriptionSize = 20
+    
+    // Margin Size
+    let topMarginConstant: CGFloat = 10
+    let rightMarginConstant: CGFloat = -10
+    let leftMarginConstant: CGFloat = 10
+    let bottomMarginConstant: CGFloat = -55
+    
     private let imageContainer: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +33,7 @@ class PageCollectionViewCell: UICollectionViewCell {
         label.text = "In Love"
         label.font = UIFont.boldSystemFont(ofSize: 50)
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return label
     }()
@@ -52,7 +63,7 @@ class PageCollectionViewCell: UICollectionViewCell {
     }
     
     func updateLayout(photo: Photo) {
-        self.imageContainer.af_setImage(withURL: URL(string: photo.imageURL) ?? URL(string: "https://stockx-assets.imgix.net/logo/stockx-header-logo-white.svg?auto=compress,format")!)
+        self.imageContainer.af_setImage(withURL: URL(string: photo.imageURL)!)
         self.titleLabel.text = photo.title
         self.viewsLabel.text = "Views: \(photo.views)"
         if photo.userName == "" {
@@ -70,21 +81,23 @@ class PageCollectionViewCell: UICollectionViewCell {
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
             // imageContainer - constraints
+
+            imageContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            imageContainer.bottomAnchor.constraint(equalTo: viewsLabel.topAnchor),
             imageContainer.widthAnchor.constraint(equalTo: widthAnchor),
-            imageContainer.heightAnchor.constraint(equalTo: heightAnchor),
             // titleLabel - constraints
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
-            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: topMarginConstant),
+            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: leftMarginConstant),
+            titleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: rightMarginConstant),
             // viewsLabel - constraints
-            viewsLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -55),
-            viewsLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            viewsLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            viewsLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: bottomMarginConstant),
+            viewsLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: leftMarginConstant),
+            viewsLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: rightMarginConstant),
             // userLabel - constraints
             userLabel.topAnchor.constraint(equalTo: viewsLabel.bottomAnchor),
             userLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-            userLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            userLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -10)
+            userLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: leftMarginConstant),
+            userLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: rightMarginConstant)
             ])
     }
     

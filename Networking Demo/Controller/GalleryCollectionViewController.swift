@@ -28,17 +28,15 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
 
         // Register cell classes
         self.collectionView!.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
         collectionView?.isPagingEnabled = true
-        
-        collectionView?.backgroundColor = .white
         
         makeNetworkRequest()
         
     }
     
-    func makeNetworkRequest() {
+    // This func makes a network request using Alamofire and parse the JSON data with SwiftyJSON
+    private func makeNetworkRequest() {
         Alamofire.request(url).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -87,6 +85,9 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
     }
     // this function changes the size of each collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        
+        
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
     // this function changes the amount of space between each collection view cell
