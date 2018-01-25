@@ -11,4 +11,5 @@ import Foundation
 struct Gallery {
     private(set) public var galleryNumber: String
     private(set) public var numberOfPhotos: String
+    private(set) public var galleryID: String
 }

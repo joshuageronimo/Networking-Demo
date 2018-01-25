@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OO3-UP-ZbW">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,11 +12,11 @@
             <objects>
                 <viewController id="OO3-UP-ZbW" customClass="MenuGalleryViewController" customModule="Networking_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n7n-dx-DbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flickr Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-bo-TEW">
-                                <rect key="frame" x="16" y="36" width="343" height="54"/>
+                                <rect key="frame" x="16" y="36" width="568" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="ug8-14-Qe9"/>
                                 </constraints>
@@ -29,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-hS-AAv">
-                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
+                                <rect key="frame" x="0.0" y="98" width="600" height="502"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.3411764706" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="UJ0-ZW-JSw">
                                     <size key="itemSize" width="180" height="195"/>
@@ -75,18 +71,19 @@
                                                         <constraint firstAttribute="width" constant="160" id="VjI-aJ-HGU"/>
                                                         <constraint firstItem="it6-fl-3Tr" firstAttribute="leading" secondItem="KvQ-ez-rRE" secondAttribute="leading" constant="14" id="pVb-aC-Huy"/>
                                                     </constraints>
+                                                    <viewLayoutGuide key="safeArea" id="04O-hW-qcV"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="15"/>
+                                                            <integer key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                            <real key="value" value="0.5"/>
+                                                            <real key="value" value="0.29999999999999999"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                                            <integer key="value" value="5"/>
+                                                            <integer key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOffset">
-                                                            <integer key="value" value="10"/>
+                                                            <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -130,14 +127,14 @@
             </objects>
             <point key="canvasLocation" x="-719.20000000000005" y="-282.00899550224892"/>
         </scene>
-        <!--Gallery Collection View Controller-->
+        <!--Photo Gallery Collection View Controller-->
         <scene sceneID="7Aw-om-LVv">
             <objects>
-                <collectionViewController modalTransitionStyle="crossDissolve" id="a5j-fb-2XJ" customClass="GalleryCollectionViewController" customModule="Networking_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController modalTransitionStyle="crossDissolve" id="a5j-fb-2XJ" customClass="PhotoGalleryCollectionViewController" customModule="Networking_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bB2-bO-Qnx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.3411764706" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gov-ls-h17">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -152,6 +149,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.3411764706" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <viewLayoutGuide key="safeArea" id="pcm-qG-xp3"/>
                             </collectionViewCell>
                         </cells>
                         <connections>

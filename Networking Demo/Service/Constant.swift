@@ -31,7 +31,6 @@ struct Constant {
     struct FlickrParameterValues {
         static let GalleryMethod = "flickr.galleries.getPhotos"
         static let APIKey = "e85fd10a7773c7a46f57ccc43817ae66"
-        static let GalleryID = "72157692049980335"
         // Full extra value link
         static let Extra = "\(ExtraValue.MediumSizeImage),+\(ExtraValue.Views),+\(ExtraValue.DateTaken),+\(ExtraValue.PathAlias)"
         static let ResponseFormat = "json"

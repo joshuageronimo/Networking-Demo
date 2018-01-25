@@ -5,36 +5,39 @@
 //  Created by Joshua Geronimo on 1/17/18.
 //  Copyright © 2018 Joshua Geronimo. All rights reserved.
 //
-
 import UIKit
 import SwiftyJSON
 import Alamofire
 import AlamofireImage
 
 private let reuseIdentifier = "Cell"
+private var galleryID = ""
 
-class GalleryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class PhotoGalleryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // API - URL
-    private let url = Network.instance.flickrURLFromParameters()
-    
+//    private let url = Network.instance.flickrURLFromParameters()
     private var allPhotosInGallery: [Photo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Register cell classes
-        self.collectionView!.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        // Do any additional setup after loading the view.
-        collectionView?.isPagingEnabled = true
+        self.collectionView!.register(PhotoGalleryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // Reload data
+        self.collectionView?.reloadData()
         
         makeNetworkRequest()
         
     }
     
+    func updateGallery(_ id: Gallery) {
+        galleryID = id.galleryID
+    }
+    
     // This func makes a network request using Alamofire and parse the JSON data with SwiftyJSON
     private func makeNetworkRequest() {
-        Alamofire.request(url).validate().responseJSON { response in
+        Alamofire.request("https://api.flickr.com/services/rest/?method=\(Constant.FlickrParameterValues.GalleryMethod)&api_key=\(Constant.FlickrParameterValues.APIKey)&gallery_id=\(galleryID)&extras=\(Constant.FlickrParameterValues.Extra)&format=\(Constant.FlickrParameterValues.ResponseFormat)&nojsoncallback=\(Constant.FlickrParameterValues.DisableJSONCallback)").validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -54,16 +57,6 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     // MARK: UICollectionViewDataSource
 
     // determines the number of cells or going to be in the collection view
@@ -72,19 +65,16 @@ class GalleryCollectionViewController: UICollectionViewController, UICollectionV
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PageCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoGalleryCollectionViewCell {
             cell.updateLayout(photo: self.allPhotosInGallery[indexPath.item])
             return cell
         } else {
             print("error")
-            return PageCollectionViewCell()
+            return PhotoGalleryCollectionViewCell()
         }
     }
     // this function changes the size of each collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        
-        
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
     // this function changes the amount of space between each collection view cell

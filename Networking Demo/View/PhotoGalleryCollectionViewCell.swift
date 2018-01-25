@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PageCollectionViewCell: UICollectionViewCell {
+class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     
     // Font Sizes
     let titleSize: CGFloat = 50
@@ -58,7 +58,6 @@ class PageCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .black
         setUpLayout()
     }
     

@@ -15,7 +15,7 @@ class Network {
     private let methodParameterKeys = [
         Constant.FlickrParameterKeys.Method : Constant.FlickrParameterValues.GalleryMethod,
         Constant.FlickrParameterKeys.APIKey : Constant.FlickrParameterValues.APIKey,
-        Constant.FlickrParameterKeys.GalleryID : Constant.FlickrParameterValues.GalleryID,
+//        Constant.FlickrParameterKeys.GalleryID : galleryID,
         Constant.FlickrParameterKeys.Extras : Constant.FlickrParameterValues.Extra,
         Constant.FlickrParameterKeys.Format : Constant.FlickrParameterValues.ResponseFormat,
         Constant.FlickrParameterKeys.NoJSONCallback : Constant.FlickrParameterValues.DisableJSONCallback]
