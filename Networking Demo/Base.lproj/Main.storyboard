@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OO3-UP-ZbW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="swu-Iz-WZn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Menu Gallery View Controller-->
+        <!--Flickr Gallery-->
         <scene sceneID="Opn-et-ZH4">
             <objects>
                 <viewController id="OO3-UP-ZbW" customClass="MenuGalleryViewController" customModule="Networking_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n7n-dx-DbZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flickr Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="4mP-bo-TEW">
-                                <rect key="frame" x="16" y="36" width="568" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="ug8-14-Qe9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-hS-AAv">
-                                <rect key="frame" x="0.0" y="98" width="600" height="502"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                 <color key="backgroundColor" red="0.23921568630000001" green="0.3411764706" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="UJ0-ZW-JSw">
                                     <size key="itemSize" width="180" height="195"/>
@@ -108,16 +103,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.23921568627450979" green="0.3411764705882353" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="MO6-uy-ITp" firstAttribute="trailing" secondItem="4mP-bo-TEW" secondAttribute="trailing" constant="16" id="0W7-qk-ZGU"/>
-                            <constraint firstItem="GTR-hS-AAv" firstAttribute="top" secondItem="4mP-bo-TEW" secondAttribute="bottom" constant="8" id="95O-Z2-bGH"/>
-                            <constraint firstItem="MO6-uy-ITp" firstAttribute="bottom" secondItem="GTR-hS-AAv" secondAttribute="bottom" id="RfD-Cd-XM9"/>
-                            <constraint firstItem="4mP-bo-TEW" firstAttribute="top" secondItem="MO6-uy-ITp" secondAttribute="top" constant="16" id="cch-WQ-mD0"/>
+                            <constraint firstItem="GTR-hS-AAv" firstAttribute="top" secondItem="MO6-uy-ITp" secondAttribute="top" id="QIR-6q-gTT"/>
+                            <constraint firstAttribute="bottom" secondItem="GTR-hS-AAv" secondAttribute="bottom" id="RfD-Cd-XM9"/>
                             <constraint firstItem="GTR-hS-AAv" firstAttribute="trailing" secondItem="MO6-uy-ITp" secondAttribute="trailing" id="dob-pM-h0W"/>
                             <constraint firstItem="GTR-hS-AAv" firstAttribute="leading" secondItem="MO6-uy-ITp" secondAttribute="leading" id="gbq-n8-e9i"/>
-                            <constraint firstItem="4mP-bo-TEW" firstAttribute="leading" secondItem="MO6-uy-ITp" secondAttribute="leading" constant="16" id="wdq-MG-TAW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MO6-uy-ITp"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Flickr Gallery" id="Fuu-1J-f13"/>
                     <connections>
                         <outlet property="menuCollectionView" destination="GTR-hS-AAv" id="B7B-up-0x5"/>
                         <segue destination="a5j-fb-2XJ" kind="show" identifier="PhotoGallery" id="9f0-9b-8ob"/>
@@ -125,14 +118,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5M-pJ-6Ly" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-719.20000000000005" y="-282.00899550224892"/>
+            <point key="canvasLocation" x="-380" y="-282.90854572713647"/>
         </scene>
         <!--Photo Gallery Collection View Controller-->
         <scene sceneID="7Aw-om-LVv">
             <objects>
                 <collectionViewController modalTransitionStyle="crossDissolve" id="a5j-fb-2XJ" customClass="PhotoGalleryCollectionViewController" customModule="Networking_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bB2-bO-Qnx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.23921568630000001" green="0.3411764706" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gov-ls-h17">
@@ -142,7 +135,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1gR-9T-Zjh">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="1gR-9T-Zjh">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -161,7 +154,34 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exu-mU-chv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="-282"/>
+            <point key="canvasLocation" x="436" y="-282.00899550224892"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h4I-BY-gBI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="swu-Iz-WZn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="2YF-0h-Rso">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.3411764706" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OO3-UP-ZbW" kind="relationship" relationship="rootViewController" id="gYt-GN-7sr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JUA-kl-Tls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1023" y="-283"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     let leftMarginConstant: CGFloat = 10
     let bottomMarginConstant: CGFloat = -55
     
-    private let imageContainer: UIImageView = {
+    private let galleryImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
@@ -62,7 +62,7 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     }
     
     func updateLayout(photo: Photo) {
-        self.imageContainer.af_setImage(withURL: URL(string: photo.imageURL)!)
+        self.galleryImage.af_setImage(withURL: URL(string: photo.imageURL)!)
         self.titleLabel.text = photo.title
         self.viewsLabel.text = "Views: \(photo.views)"
         if photo.userName == "" {
@@ -74,16 +74,15 @@ class PhotoGalleryCollectionViewCell: UICollectionViewCell {
     }
     
     private func setUpLayout() {
-        addSubview(imageContainer)
+        addSubview(galleryImage)
         addSubview(viewsLabel)
         addSubview(userLabel)
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
             // imageContainer - constraints
-
-            imageContainer.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            imageContainer.bottomAnchor.constraint(equalTo: viewsLabel.topAnchor),
-            imageContainer.widthAnchor.constraint(equalTo: widthAnchor),
+            galleryImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            galleryImage.bottomAnchor.constraint(equalTo: viewsLabel.topAnchor),
+            galleryImage.widthAnchor.constraint(equalTo: widthAnchor),
             // titleLabel - constraints
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: topMarginConstant),
             titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: leftMarginConstant),

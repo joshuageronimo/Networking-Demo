@@ -21,9 +21,10 @@ class PhotoGalleryCollectionViewController: UICollectionViewController, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Register cell classes
         self.collectionView!.register(PhotoGalleryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        // This will change the size of the navigation controller's size to small
+        self.navigationItem.largeTitleDisplayMode = .never
         // Reload data
         self.collectionView?.reloadData()
         
@@ -75,7 +76,7 @@ class PhotoGalleryCollectionViewController: UICollectionViewController, UICollec
     }
     // this function changes the size of each collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: view.frame.height)
+        return CGSize(width: view.frame.width, height: view.frame.height / 2)
     }
     // this function changes the amount of space between each collection view cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

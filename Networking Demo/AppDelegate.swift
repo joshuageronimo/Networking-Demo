@@ -14,16 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        //Make Window Key
-//        window = UIWindow()
-//        window?.makeKey()
-//        // Change the status bar to white
-//        UIApplication.shared.statusBarStyle = .lightContent
-//        // Set rootview
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        let collectionView = GalleryCollectionViewController(collectionViewLayout: layout)
-//        window?.rootViewController = collectionView
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
     

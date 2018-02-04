@@ -12,7 +12,13 @@ import SwiftyJSON
 
 class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    // API - URL
+    // This is the back button for the PhotoGalleryCollectionViewController.
+    let backItem: UIBarButtonItem =  {
+        let button = UIBarButtonItem()
+        button.title = ""
+        return button
+    }()
+    
     private let url = Network.instance.flickrURLFromParameters()
     private var index = 0 /* will be used to get the index of the tapped cell */
     
@@ -23,15 +29,18 @@ class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UIC
         // set delegate & dataSource to the controller
         menuCollectionView.delegate = self
         menuCollectionView.dataSource = self
+        // take out the border in the navigation bar.
+        self.navigationController?.navigationBar.shadowImage = UIImage()
 
     }
- 
     
     // MARK - Segue
     
     // This function notifies the view controller that a segue is about to be performed.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let photoGallery = segue.destination as? PhotoGalleryCollectionViewController {
+            
+            navigationItem.backBarButtonItem = backItem
             // Send the specific Gallery that the user has chosen to PhotoGallery.
             // The Gallery that's going to be sent is going to be used to get the appropriate GalleryID for the CollectionView.
             photoGallery.updateGallery(DataSource.instance.getArray[index])
