@@ -19,7 +19,6 @@ class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UIC
         return button
     }()
     
-    private let url = Network.instance.flickrURLFromParameters()
     private var index = 0 /* will be used to get the index of the tapped cell */
     
     @IBOutlet weak var menuCollectionView: UICollectionView!
@@ -39,8 +38,7 @@ class MenuGalleryViewController: UIViewController, UICollectionViewDelegate, UIC
     // This function notifies the view controller that a segue is about to be performed.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let photoGallery = segue.destination as? PhotoGalleryCollectionViewController {
-            
-            navigationItem.backBarButtonItem = backItem
+            navigationItem.backBarButtonItem = backItem /* this will set the title of the back button for the next screen. */
             // Send the specific Gallery that the user has chosen to PhotoGallery.
             // The Gallery that's going to be sent is going to be used to get the appropriate GalleryID for the CollectionView.
             photoGallery.updateGallery(DataSource.instance.getArray[index])

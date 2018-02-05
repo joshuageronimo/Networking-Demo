@@ -13,7 +13,6 @@
 		DF8E9EE9200F25A800642867 /* PhotoGalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E9EE8200F25A800642867 /* PhotoGalleryCollectionViewController.swift */; };
 		DF8E9EEB200F287500642867 /* PhotoGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E9EEA200F287500642867 /* PhotoGalleryCollectionViewCell.swift */; };
 		DF8E9EED200F2CB400642867 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8E9EEC200F2CB400642867 /* Photo.swift */; };
-		DFA4FBF9200EE117005FFF1B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA4FBF8200EE117005FFF1B /* Network.swift */; };
 		DFB84008200EBCC0001F775A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB84007200EBCC0001F775A /* Constant.swift */; };
 		DFBB9795201818290065935B /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBB9794201818290065935B /* Gallery.swift */; };
 		DFBB97972018190B0065935B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBB97962018190B0065935B /* DataSource.swift */; };
@@ -32,7 +31,6 @@
 		DF8E9EE8200F25A800642867 /* PhotoGalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		DF8E9EEA200F287500642867 /* PhotoGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF8E9EEC200F2CB400642867 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		DFA4FBF8200EE117005FFF1B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		DFB84007200EBCC0001F775A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		DFBB9794201818290065935B /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		DFBB97962018190B0065935B /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				DFB84007200EBCC0001F775A /* Constant.swift */,
-				DFA4FBF8200EE117005FFF1B /* Network.swift */,
 				DFBB97962018190B0065935B /* DataSource.swift */,
 			);
 			path = Service;
@@ -284,7 +281,6 @@
 				DFC4D4CA200D8A4B00D38240 /* AppDelegate.swift in Sources */,
 				DFB84008200EBCC0001F775A /* Constant.swift in Sources */,
 				DF34579D2017F82E0062800F /* MenuGalleryViewController.swift in Sources */,
-				DFA4FBF9200EE117005FFF1B /* Network.swift in Sources */,
 				DFBB97972018190B0065935B /* DataSource.swift in Sources */,
 				DF8E9EEB200F287500642867 /* PhotoGalleryCollectionViewCell.swift in Sources */,
 			);

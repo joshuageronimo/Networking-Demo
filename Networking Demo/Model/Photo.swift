@@ -9,19 +9,16 @@
 import Foundation
 import SwiftyJSON
 
-struct Photo {
 
-    let imageURLPath = "[Constant.ExtraValue.OriginalSize].stringValue"
-    let imageURL: String
-    let title: String
-    let views: String
-    let userName: String
+// This is the model for the Photo Gallery.
+struct Photo {
+    private(set) public var imageURL: String
+    private(set) public var views: String
+    private(set) public var userName: String
     
     init(json: JSON) {
         // url for image
         self.imageURL = "\(json[Constant.ExtraValue.MediumSizeImage].stringValue)"
-        // url for title
-        self.title = "\(json["title"].stringValue)"
         // url for views
         self.views = "\(json[Constant.ExtraValue.Views].stringValue)"
         // url for user

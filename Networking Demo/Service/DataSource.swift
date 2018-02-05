@@ -10,7 +10,7 @@ import Foundation
 
 class DataSource {
     static let instance = DataSource()
-    
+    // This is the database of gallery of the app.
     private let itemMenu = [
         Gallery(galleryNumber: "Gallery #1", numberOfPhotos: "50", galleryID: "72157692049980335"),
         Gallery(galleryNumber: "Gallery #2", numberOfPhotos: "17", galleryID: "72157690781695141"),

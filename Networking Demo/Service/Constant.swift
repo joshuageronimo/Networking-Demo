@@ -10,23 +10,6 @@ import Foundation
 
 struct Constant {
     
-    // MARK: Flickr
-    struct Flickr {
-        static let APIScheme = "https"
-        static let APIHost = "api.flickr.com"
-        static let APIPath = "/services/rest"
-    }
-    
-    // MARK: Flickr Parameters Keys
-    struct FlickrParameterKeys {
-        static let Method = "method"
-        static let APIKey = "api_key"
-        static let GalleryID = "gallery_id"
-        static let Extras = "extras"
-        static let Format = "format"
-        static let NoJSONCallback = "nojsoncallback"
-    }
-    
     // MARK: Flickr Parameter Values
     struct FlickrParameterValues {
         static let GalleryMethod = "flickr.galleries.getPhotos"

@@ -10,28 +10,24 @@ import SwiftyJSON
 import Alamofire
 import AlamofireImage
 
-private let reuseIdentifier = "Cell"
-private var galleryID = ""
+private let reuseIdentifier = "Cell" /* name of the identifier for our custom cell. */
+private var galleryID = "" /* use this as a reference for the gallery ID */
 
 class PhotoGalleryCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    // API - URL
-//    private let url = Network.instance.flickrURLFromParameters()
-    private var allPhotosInGallery: [Photo] = []
+    private var allPhotosInGallery: [Photo] = [] /* save the json data here. */
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Register cell classes
         self.collectionView!.register(PhotoGalleryCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        // This will change the size of the navigation controller's size to small
-        self.navigationItem.largeTitleDisplayMode = .never
-        // Reload data
-        self.collectionView?.reloadData()
-        
-        makeNetworkRequest()
+        self.navigationItem.largeTitleDisplayMode = .never /* chage the nav bar size to small. */
+        self.collectionView?.reloadData() /* reload the data in the collectionView */
+        makeNetworkRequest() /* make a network request */
         
     }
     
+    // this function will update the gallery ID for our HTTPS request.
     func updateGallery(_ id: Gallery) {
         galleryID = id.galleryID
     }

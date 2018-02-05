@@ -8,6 +8,7 @@
 
 import Foundation
 
+// This is the model for the Menu Gallery.
 struct Gallery {
     private(set) public var galleryNumber: String
     private(set) public var numberOfPhotos: String
